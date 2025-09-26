@@ -1,0 +1,226 @@
+.home-main {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  margin: 0;
+  background: var(--background, #181824);
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.home-section {
+  width: 100%;
+  max-width: 1350px;
+  min-width: 0;
+  min-height: 400px;
+  height: 600px;
+  max-height: 900px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  background: var(--card-bg, #23263a);
+  box-shadow: 0 8px 32px rgba(0,224,211,0.10);
+  padding: 2.5rem 2rem;
+  margin: 2rem auto;
+  margin-top: 5rem;
+  border-radius: 18px;
+  border: 1.5px solid var(--card-border, #2c2f4a);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  overflow: hidden;
+}
+
+.home-section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 45%;
+  height: 100%;
+  background: url('../assets/profile.jpg') no-repeat left center/cover;
+  opacity: 0.70;
+  z-index: 1;
+  border-radius: 18px 0 0 18px;
+  transition: width 0.3s, height 0.3s;
+}
+
+.home-content {
+  position: relative;
+  z-index: 2;
+  margin-left: 48%;
+  width: 52%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.home-title {
+  color: var(--primary, #00e0d3);
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  letter-spacing: 1px;
+  text-align: left;
+  width: 100%;
+}
+
+.home-subtitle {
+  color: var(--secondary, #b0b3c6);
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  width: 100%;
+}
+
+.home-desc {
+  font-size: 1.1rem;
+  color: var(--text, #fff);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+  font-family: 'Open Sans', Arial, sans-serif;
+  text-align: left;
+  width: 100%;
+}
+
+.home-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.home-btn {
+  padding: 0.75rem 1.5rem;
+  background: var(--primary, #00e0d3);
+  color: #23263a;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: background 0.2s, transform 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(0,224,211,0.10);
+  border: none;
+  outline: none;
+}
+
+.home-btn:hover {
+  background: #fff;
+  color: var(--primary, #00e0d3);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.home-btn.secondary {
+  background: var(--card-bg, #23263a);
+  color: var(--primary, #00e0d3);
+  border: 1.5px solid var(--primary, #00e0d3);
+}
+
+.home-btn.secondary:hover {
+  background: var(--primary, #00e0d3);
+  color: #23263a;
+}
+
+/* Responsive styles */
+@media (max-width: 1100px) {
+  .home-section {
+    padding: 2rem 1rem;
+    height: 480px;
+  }
+  .home-section::before {
+    width: 40%;
+  }
+  .home-content {
+    margin-left: 42%;
+    width: 58%;
+  }
+}
+
+@media (max-width: 700px) {
+  .home-main {
+    align-items: flex-start;
+    padding: 0.5rem 0.2rem;
+  }
+  .home-section {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: auto;
+    min-height: 400px;
+    padding: 1.5rem 0.5rem;
+    max-width: 98vw;
+    margin: 1rem auto;
+  }
+  .home-section::before {
+    width: 100%;
+    height: 160px;
+    top: 0;
+    left: 0;
+    background-position: top center;
+    opacity: 0.22;
+    border-radius: 18px 18px 0 0;
+  }
+  .home-content {
+    margin-left: 0;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    padding-top: 1.2rem;
+  }
+  .home-title,
+  .home-subtitle,
+  .home-desc,
+  .home-buttons {
+    text-align: center;
+    width: 100%;
+  }
+  .home-title {
+    font-size: 2rem;
+  }
+  .home-subtitle {
+    font-size: 1.1rem;
+  }
+  .home-desc {
+    font-size: 1rem;
+  }
+  .home-btn {
+    font-size: 0.95rem;
+    padding: 0.65rem 1.2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .home-main {
+    padding: 0.2rem 0.1rem;
+  }
+  .home-section {
+    max-width: 100vw;
+    padding: 1rem 0.2rem;
+  }
+  .home-section::before {
+    height: 90px;
+    opacity: 0.25;
+  }
+  .home-title {
+    font-size: 1.3rem;
+  }
+  .home-subtitle {
+    font-size: 0.95rem;
+  }
+  .home-desc {
+    font-size: 0.9rem;
+  }
+  .home-btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.8rem;
+  }
+}
