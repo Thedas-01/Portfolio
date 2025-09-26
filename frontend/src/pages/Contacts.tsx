@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import emailjs from "emailjs-com";
 import "../css/contacts.css";
 
 const contactMethods = [
@@ -43,6 +44,7 @@ const contactMethods = [
 const Contacts: React.FC = () => {
 	const [form, setForm] = useState({ name: "", email: "", message: "" });
 	const [submitted, setSubmitted] = useState(false);
+	const formRef = useRef<HTMLFormElement>(null);
 
 	const handleChange = (
 		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -52,9 +54,28 @@ const Contacts: React.FC = () => {
 
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
-		// You can integrate with an API or email service here
-		setSubmitted(true);
-		setForm({ name: "", email: "", message: "" });
+		if (formRef.current) {
+			emailjs
+				.sendForm(
+					"service_folgruh", // Replace with your EmailJS service ID
+					"template_c3lboam", // Replace with your EmailJS template ID
+					formRef.current,
+					"uXP8kzRTqPf1nmYmx" // Replace with your EmailJS public key
+				)
+				.then(
+					(result) => {
+						console.log("Email sent:", result.text);
+						setSubmitted(true);
+						setForm({ name: "", email: "", message: "" });
+					},
+					(error) => {
+						console.error("EmailJS error:", error);
+						alert("Failed to send message. Please try again.");
+					}
+				);
+		} else {
+			alert("Form reference is not available.");
+		}
 	};
 
 	return (
@@ -91,7 +112,11 @@ const Contacts: React.FC = () => {
 							Thank you for your feedback!
 						</div>
 					) : (
-						<form className="feedback-form" onSubmit={handleSubmit}>
+						<form
+							className="feedback-form"
+							ref={formRef}
+							onSubmit={handleSubmit}
+						>
 							<input
 								type="text"
 								name="name"

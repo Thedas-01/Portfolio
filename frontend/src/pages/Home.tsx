@@ -14,10 +14,10 @@ const Home: React.FC = () => {
           <div className="home-content">
             <h1 className="home-title">Thedas Sri Harisha</h1>
             <h2 className="home-subtitle">
-              Software Engineer | Web Developer | Tech Enthusiast | UI/UX Designer
+              Developer | UI/UX Designer | Graphic Designer | Tech Enthusiast 
             </h2>
             <p className="home-desc">
-              Skilled in full-stack development, IoT integrations, and real-time data processing. Experienced with Node.js, React Native (TypeScript), MongoDB, and Firebase. Strong background in cloud deployment, API development, and database management. Proficient in Python for machine learning and data analytics. Familiar with DevOps practices, CI/CD pipelines, and containerization. Enthusiastic about building scalable, efficient, and user-focused software solutions.
+              Skilled in full-stack development with experience in Node.js, React Native (TypeScript), MongoDB, and Firebase, along with cloud deployment, API development, and database management. Proficient in Python for machine learning and data analytics, familiar with DevOps practices, CI/CD pipelines, containerization, and manual testing. Passionate about UI/UX design, creating intuitive, responsive, and user-friendly interfaces that enhance the overall user experience. Focused on building scalable, efficient, and user-centered software solutions that combine strong technical expertise with excellent design.
             </p>
             <div className="home-buttons">
               <button className="home-btn" onClick={() => navigate("/projects")}>View Projects</button>
