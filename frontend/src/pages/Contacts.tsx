@@ -125,7 +125,7 @@ const Contacts: React.FC = () => {
 					<div className="contacts-map-embed">
 						<iframe
 							title="Google Map"
-							src="https://www.google.com/maps/place/Court+Rd,+Gampaha/@7.0891356,79.992632,16.04z/data=!4m6!3m5!1s0x3ae2fbec68d1bfff:0xf636ca42455fb5b5!8m2!3d7.0886723!4d79.9932596!16s%2Fg%2F11gf5q06_c?entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D"
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.956430836356!2d79.9909308!3d7.0892531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2fbec67fa86e7%3A0x3a455e7bb49b3615!2s87%20Court%20Rd%2C%20Gampaha!5e0!3m2!1sen!2slk!4v1690000000000!5m2!1sen!2slk"
 							width="100%"
 							height="300"
 							style={{ border: 0, borderRadius: "12px" }}
