@@ -28,7 +28,7 @@ const projects = [
     tags: ["HTML", "SCSS", "CSS", "Java Script", "Doker" ],
   },
    {
-    title: "Saloan Magement System",
+    title: "Salon Management System",
     description: "A Salon Management System is a software (web app, desktop, or mobile) that helps a salon manage its daily operations smoothly..",
     link: "https://github.com/Thedas-01/Salon-Mangement-Sytem",
     tags: ["Java Script", "Css", "HTML", "MongoDB" ],
